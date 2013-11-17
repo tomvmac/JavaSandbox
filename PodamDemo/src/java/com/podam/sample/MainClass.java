@@ -46,7 +46,7 @@ public class MainClass {
 		int count = 1;
 		for(Employee emp: employees) {
 			int addCount = 1;
-			logger.info("*************Employee("+count+")*************");
+			logger.info("*************Tom Employee("+count+")*************");
 			logger.info("EmpId:\t"+emp.getEmployeeId());
 			logger.info("EmpCode:\t"+emp.getEmployeeCode());
 			logger.info("Description:\t"+emp.getDescription());
