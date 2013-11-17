@@ -1,1 +1,3 @@
-This is just a test file, created for testing on github by Tom.
+This is just a test file, created and updated for testing on github by John.
+
+Here is my update.
