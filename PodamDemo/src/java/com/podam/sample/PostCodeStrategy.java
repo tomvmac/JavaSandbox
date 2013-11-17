@@ -27,7 +27,7 @@ public class PostCodeStrategy implements AttributeStrategy<String> {
     		return "88303";
     	}
     	
-    	if (randomNum > 1000) {
+    	if (randomNum < 1000) {
     		return "38303";
     	}
     	
