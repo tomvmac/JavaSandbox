@@ -1,4 +1,4 @@
-package com.tom.controller
+package com.tom.controller.rest
 
 import com.config.MyConfiguration
 import com.tom.domainobject.Person
@@ -22,20 +22,6 @@ import org.springframework.web.bind.annotation.ResponseBody
 @RequestMapping("/mygroovy")
 class MyGroovyController {
 
-    @Autowired
-    private MyConfiguration myConfiguration;
-
-    @RequestMapping(value = "/{firstName}", method = RequestMethod.GET)
-    String getMovie(@PathVariable String firstName, ModelMap model) {
-
-        model.addAttribute("firstName", firstName + " Groovy");
-        model.addAttribute("environmentName", myConfiguration.getEnvironmentName());
-        model.addAttribute("portNumber", myConfiguration.getPortNumber());
-
-        return "hello";
-
-
-    }
 
     @RequestMapping("/person/random")
     @ResponseBody
