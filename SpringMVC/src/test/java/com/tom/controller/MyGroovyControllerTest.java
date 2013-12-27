@@ -55,7 +55,7 @@ public class MyGroovyControllerTest {
 
         mockMvc.perform(get("/mygroovy/person/random"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.firstName").value("Kober"));
+                .andExpect(jsonPath("$.firstName").value("Kobe"));
 
 
 
