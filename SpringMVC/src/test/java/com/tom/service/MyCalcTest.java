@@ -1,7 +1,6 @@
 package com.tom.service;
 
 import static org.junit.Assert.*;
-import junit.framework.TestCase;
 import org.junit.Test;
 
 /**

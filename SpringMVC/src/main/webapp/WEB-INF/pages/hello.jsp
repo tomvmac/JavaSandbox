@@ -8,7 +8,11 @@
     Environment: ${environmentName}
     <br/>
     Port Number: ${portNumber}
+    <br/>
+    Db Name: ${dbName}
+
     </p>
+
 
 </body>
 </html>

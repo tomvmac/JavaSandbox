@@ -9,7 +9,7 @@ public class AskTest {
     @Test
     public void shouldAskGoogleForWebDriver() {
         // Setup chrome driver
-        System.setProperty("webdriver.chrome.driver", "C:\\DevTools\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\DevSoftware\\chromedriver_win32\\chromedriver.exe");
         WebDriver browser = new ChromeDriver();
 
 

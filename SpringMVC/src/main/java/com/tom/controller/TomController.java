@@ -8,22 +8,31 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
 @Controller
 @RequestMapping("/hello")
 public class TomController {
 
-@Autowired
-private MyConfiguration myConfiguration;
+    @Autowired
+    private MyConfiguration myConfiguration;
 
-      @RequestMapping(value="/{firstName}", method = RequestMethod.GET)
-      public String getMovie(@PathVariable String firstName, ModelMap model) {
+    @RequestMapping(value = "/{firstName}", method = RequestMethod.GET)
+    public String getMovie(@PathVariable String firstName, ModelMap model) throws IOException {
 
-         model.addAttribute("firstName", firstName);
-         model.addAttribute("environmentName", myConfiguration.getEnvironmentName());
-         model.addAttribute("portNumber", myConfiguration.getPortNumber());
+        Properties properties = new Properties();
+        properties.load(new FileInputStream(System.getenv("MY_SETTINGS_FOLDER") + "/mysettings.properties"));
 
-         return "hello";
+        model.addAttribute("firstName", firstName);
+        model.addAttribute("environmentName", myConfiguration.getEnvironmentName());
+        model.addAttribute("portNumber", myConfiguration.getPortNumber());
+        model.addAttribute("dbName", properties.getProperty("dbName"));
 
-      }
+        return "hello";
+
+    }
 
 }
