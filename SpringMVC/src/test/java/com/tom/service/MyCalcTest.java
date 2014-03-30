@@ -2,6 +2,7 @@ package com.tom.service;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
+import com.tommac.MyCalc;
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,9 +18,10 @@ public class MyCalcTest {
     public void TestAddNumbers() {
         int a = 1;
         int b = 3;
-        int expectedResult = 4;
+        int c = 3;
+        int expectedResult = 7;
 
-        int actualResult = MyCalc.addNumbers(a, b);
+        int actualResult = MyCalc.addNumbers(a, b, c);
 
         assertEquals(actualResult, expectedResult);
 

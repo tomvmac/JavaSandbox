@@ -75,6 +75,7 @@
           <element id="library" level="project" name="Maven: com.jcraft:jsch:0.1.23" />
           <element id="library" level="project" name="Maven: net.minidev:json-smart:1.1.1" />
           <element id="library" level="project" name="Maven: commons-lang:commons-lang:2.6" />
+          <element id="library" level="project" name="Maven: com.tommac:MyCalcLib:1.0-SNAPSHOT" />
         </element>
       </element>
     </root>
