@@ -24,12 +24,19 @@ public class TomController {
     public String getMovie(@PathVariable String firstName, ModelMap model) throws IOException {
 
         Properties properties = new Properties();
-        properties.load(new FileInputStream(System.getenv("MY_SETTINGS_FOLDER") + "/mysettings.properties"));
+
+        try{
+            properties.load(new FileInputStream(System.getenv("MY_SETTINGS_FOLDER") + "/mysettings.properties"));
+            model.addAttribute("dbName", properties.getProperty("dbName"));
+        }
+        catch(Exception ex){
+            System.out.print(ex.getMessage());
+        }
 
         model.addAttribute("firstName", firstName);
         model.addAttribute("environmentName", myConfiguration.getEnvironmentName());
         model.addAttribute("portNumber", myConfiguration.getPortNumber());
-        model.addAttribute("dbName", properties.getProperty("dbName"));
+
 
         return "hello";
 
